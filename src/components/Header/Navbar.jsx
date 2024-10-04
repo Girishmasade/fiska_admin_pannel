@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
+import { SearchOutlined, FilterOutlined, BellOutlined, ClockCircleOutlined} from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import NavbarMenu from "./NavbarMenu";
 import Logo from "../logo/Logo";
@@ -36,6 +36,10 @@ const Navbar = () => {
             <label htmlFor="data">Wonka Industries</label>
             <select id="data" className="bg-white pl-4 outline-none">
             </select>
+            <div className="flex gap-7 justify-end relative bottom-6 right-2">
+            <BellOutlined />
+            <ClockCircleOutlined className="text-green-500"/>
+            </div>
           </div>
         </Header>
         <hr />

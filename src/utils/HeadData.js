@@ -4,7 +4,7 @@ export const head = [
        name: 'Wonka Industries',
        Pan: 'ABCDE1234F',
        Email: 'johndoe@gmail.com',
-       connection: 'vendor',
+       connection: 'Vendor',
        sent: 'John Doe',
     },
     {
@@ -12,7 +12,7 @@ export const head = [
        name: 'Deepesh Khatri and Associates',
        Pan: 'ABCDE1234F',
        Email: 'samplename@gmail.com',
-       connection: 'vendor',
+       connection: 'Vendor',
        sent: 'Jenny Wilson',
     },
     {

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Table, Tag } from 'antd';
+import { Table, Tag } from 'antd';
 import { head } from '../utils/HeadData';
+
 const columns = [
   {
     title: 'Business name',
@@ -27,7 +28,17 @@ const columns = [
     dataIndex: 'connection',
     key: 'connection',
     width: 150,
-   
+    render: (text) => {
+      if (Array.isArray(text)) {
+        return text.map((type) => {
+          let color = type.toLowerCase() === 'vendor' ? 'blue' : 'red';
+          return <Tag color={color} key={type} className='text-sm'>{type}</Tag>;
+        });
+      } else {
+        let color = text.toLowerCase() === 'vendor' ? 'blue' : 'red';
+        return <Tag color={color} className='text-sm'>{text}</Tag>;
+      }
+    },
   },
   {
     title: 'Authorised By',
@@ -35,7 +46,6 @@ const columns = [
     key: 'sent',
     width: 150,
   },
-
   {
     title: 'Action',
     key: 'operation',
@@ -44,14 +54,14 @@ const columns = [
     render: () => <a className='text-blue-500'>view</a>,
   },
 ];
+
 const data = head.map(item => ({
   key: item.id,
   name: item.name,
-  age: item.age,
   Pan: item.Pan,
   Email: item.Email,
   connection: item.connection,
-  sent: item.sent
+  sent: item.sent,
 }));
 
 const Head = () => {
@@ -63,4 +73,5 @@ const Head = () => {
     />
   );
 };
+
 export default Head;
