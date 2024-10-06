@@ -1,13 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { SearchOutlined, FilterOutlined, BellOutlined, ClockCircleOutlined} from "@ant-design/icons";
+import {AppstoreOutlined, LineChartOutlined, UserOutlined} from '@ant-design/icons'
+import { FaRegHandshake } from "react-icons/fa";
+import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
+import { MdOutlineVpnKey } from "react-icons/md";
 import { Layout, Menu, theme } from "antd";
-import NavbarMenu from "./NavbarMenu";
 import Logo from "../logo/Logo";
 import Page from "./Pagination";
-import Head from "../../pages/Head";
+import Pagecontent from "../PageContent/Pagecontent";
+import { useNavigate,  useLocation, } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
 
 const Navbar = () => {
+  const navigate = useNavigate()
+
+  const location = useLocation();
+  const [selectedKeys, setSelectedKeys] = useState("/");
+
+  useEffect(() => {
+    const pathName = location.pathname;
+    setSelectedKeys(pathName);
+  }, [location.pathname]);
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -20,8 +34,44 @@ const Navbar = () => {
       <Sider className="border bg-white">
         <div />
         <Logo />
-        <Menu className="relative top-4">
-          <NavbarMenu />
+        <Menu className="relative top-4 hover:text-green-500" onClick={(item) => {
+         
+          navigate(item.key);
+        }}
+        selectedKeys={[selectedKeys]}
+        items={[
+          {
+            label: "Dashbaord",
+            icon: <AppstoreOutlined />,
+            key: "/",
+          },
+          {
+            label: "Connected Business",
+            key: "/connected",
+            icon: <FaRegHandshake />,
+          },
+          {
+            label: "Authorised Business",
+            key: "/authorised",
+            icon: <MdOutlineVpnKey  />,
+          },
+          {
+            label: "My business",
+            key: "/mybusiness",
+            icon: <HiOutlineBuildingOffice2 />,
+          },
+          {
+            label: "Reports",
+            key: "/reports",
+            icon: <LineChartOutlined />,
+          },
+          {
+            label: "User Management",
+            key: "/usermanagement",
+            icon: <UserOutlined />,
+          },
+        ]}>
+         
         </Menu>
       </Sider>
 
@@ -94,7 +144,7 @@ const Navbar = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <Head/>
+            <Pagecontent/>
           </div>
         </Content>
         <Footer>
