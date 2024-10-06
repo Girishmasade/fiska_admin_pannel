@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
 import { head } from '../utils/HeadData';
+import UserDetails from './UserDetails';
 
 const columns = [
   {
@@ -51,7 +52,7 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: () => <a className='text-blue-500'>view</a>,
+    render: () => <a href='#layout' className='text-blue-500'>view</a>,
   },
 ];
 
@@ -66,11 +67,14 @@ const data = head.map(item => ({
 
 const Head = () => {
   return (
+    <>
     <Table
       columns={columns}
       dataSource={data}
       pagination={false}
-    />
+      />
+     
+    </>
   );
 };
 
