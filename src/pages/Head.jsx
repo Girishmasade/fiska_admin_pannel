@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import { Table, Tag} from 'antd';
 import { head } from '../utils/HeadData';
 import UserDetails from './UserDetails';
 
+const Head = () => {
+
+const [isVisible, setisVisible] = useState(null)
 
 const columns = [
   {
@@ -53,9 +56,13 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: () => <a href='#'>view</a>,
+    render: (record) => <a href='#' onClick={() => handleview(record)}>view</a>,
   },
 ];
+
+const handleview = (record) => {
+  setisVisible(record)
+}
 
 const data = head.map(item => ({
   key: item.id,
@@ -66,9 +73,7 @@ const data = head.map(item => ({
   sent: item.sent,
 }));
 
-
-
-const Head = () => {
+ 
   return (
     <>
     <Table
@@ -76,7 +81,7 @@ const Head = () => {
       dataSource={data}
       pagination={false}
       />
-<UserDetails/>
+       {isVisible &&  <UserDetails data={isVisible}/>}
     </>
   );
 };

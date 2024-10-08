@@ -145,6 +145,7 @@ const Navbar = () => {
             }}
           >
             <Pagecontent/>
+            
           </div>
         </Content>
         <Footer>

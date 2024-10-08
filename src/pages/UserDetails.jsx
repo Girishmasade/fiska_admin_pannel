@@ -1,14 +1,12 @@
 
 import { Drawer } from "antd";
 import React, { useState } from "react";
-import { CloseOutlined, LinkOutlined } from "@ant-design/icons";
-import { Layout } from "antd";
-const { Content } = Layout;
+import { LinkOutlined } from "@ant-design/icons";
 
 function UserDetails() {
   const [isVisible, setIsVisible] = useState(true);
   return (
-    <div>
+    <div id="auth">
       <Drawer
         visible={isVisible}
         closable={true}
@@ -17,6 +15,7 @@ function UserDetails() {
           setIsVisible(!isVisible);
         }}
         title="Deepesh Khatri and Associates"
+        
       >
         <div className="grid grid-rows-7 w-full h-[100%] items-start text-start text-sm">
           <div className="grid grid-rows-2">
