@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Table, Tag, Button } from 'antd';
+import { Table, Tag} from 'antd';
 import { head } from '../utils/HeadData';
 import UserDetails from './UserDetails';
 
@@ -53,7 +53,7 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: () => <Button>view</Button>,
+    render: () => <a href='#'>view</a>,
   },
 ];
 
