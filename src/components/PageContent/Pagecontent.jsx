@@ -15,6 +15,7 @@ function Pagecontent() {
             }}
           >
            <PageRoutes/>
+            
           </div>
     </Content>
         </Layout>

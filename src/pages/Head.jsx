@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Table, Tag } from 'antd';
 import { head } from '../utils/HeadData';
 import UserDetails from './UserDetails';
+
 
 const columns = [
   {
@@ -65,7 +66,20 @@ const data = head.map(item => ({
   sent: item.sent,
 }));
 
+
+
 const Head = () => {
+  const [visible, setVisible] = useState(false);
+  const [drawerContent, setDrawerContent] = useState({});
+
+  const showDrawer = (record) => {
+    setDrawerContent(record);
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
   return (
     <>
     <Table
@@ -73,7 +87,7 @@ const Head = () => {
       dataSource={data}
       pagination={false}
       />
-     
+=
     </>
   );
 };

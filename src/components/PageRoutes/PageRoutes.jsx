@@ -5,7 +5,8 @@ import Head from '../../pages/Head'
 function PageRoutes() {
   return (
     <Routes>
-      <Route path='/authorised' element={<Head/>}></Route>
+      <Route path='/authorised' element={<Head/>}/>
+     
     </Routes>
   )
 }
