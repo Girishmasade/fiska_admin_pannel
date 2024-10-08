@@ -69,17 +69,7 @@ const data = head.map(item => ({
 
 
 const Head = () => {
-  const [visible, setVisible] = useState(false);
-  const [drawerContent, setDrawerContent] = useState({});
 
-  const showDrawer = (record) => {
-    setDrawerContent(record);
-    setVisible(true);
-  };
-
-  const onClose = () => {
-    setVisible(false);
-  };
   return (
     <>
     <Table
@@ -87,7 +77,7 @@ const Head = () => {
       dataSource={data}
       pagination={false}
       />
-=
+<UserDetails/>
     </>
   );
 };
