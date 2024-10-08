@@ -18,7 +18,7 @@ function UserDetails() {
         }}
         title="Deepesh Khatri and Associates"
       >
-        <div className="grid grid-rows-7 overflow-hidden items-start text-start text-sm">
+        <div className="grid grid-rows-7 w-full h-[100%] items-start text-start text-sm">
           <div className="grid grid-rows-2">
             <div className="grid grid-cols-2">
               <div className="flex flex-col">
@@ -116,13 +116,12 @@ function UserDetails() {
                 </button>
               </div>
             </div>
-          </div>
-
-          <div className="pt-8 text-end text-sm">
+            <div className="pt-5 text-end text-sm">
             <a href="#" className="text-blue-500">
               Request connection
             </a>
           </div>
+          </div>        
         </div>
       </Drawer>
     </div>
