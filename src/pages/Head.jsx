@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Table, Tag } from 'antd';
+import { Table, Tag, Button } from 'antd';
 import { head } from '../utils/HeadData';
 import UserDetails from './UserDetails';
 
@@ -53,7 +53,7 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: () => <a href='#layout' className='text-blue-500'>view</a>,
+    render: () => <Button>view</Button>,
   },
 ];
 
@@ -69,7 +69,6 @@ const data = head.map(item => ({
 
 
 const Head = () => {
-
   return (
     <>
     <Table
