@@ -2,6 +2,7 @@
 import { Drawer } from "antd";
 import React, { useState } from "react";
 import { LinkOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 function UserDetails() {
   const [isVisible, setIsVisible] = useState(true);
@@ -116,9 +117,9 @@ function UserDetails() {
               </div>
             </div>
             <div className="pt-5 text-end text-sm">
-            <a href="/RequestConnection" className="text-blue-500">
+            <Link to="/RequestConnection" className="text-blue-500">
               Request connection
-            </a>
+            </Link>
           </div>
           </div>        
         </div>
