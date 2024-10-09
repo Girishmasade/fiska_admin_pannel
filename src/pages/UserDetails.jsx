@@ -116,7 +116,7 @@ function UserDetails() {
               </div>
             </div>
             <div className="pt-5 text-end text-sm">
-            <a href="#" className="text-blue-500">
+            <a href="/RequestConnection" className="text-blue-500">
               Request connection
             </a>
           </div>

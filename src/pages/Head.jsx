@@ -56,7 +56,7 @@ const columns = [
     key: 'operation',
     fixed: 'right',
     width: 100,
-    render: (record) => <a href='#' onClick={() => handleview(record)}>view</a>,
+    render: (record) => <a href='#' onClick={() => handleview(record)} className='text-blue-500'>view</a>,
   },
 ];
 
