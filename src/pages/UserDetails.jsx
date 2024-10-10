@@ -1,11 +1,11 @@
-
 import { Drawer } from "antd";
 import React, { useState } from "react";
 import { LinkOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 function UserDetails() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true); // Control drawer visibility
+
   return (
     <div id="auth">
       <Drawer
@@ -13,10 +13,9 @@ function UserDetails() {
         closable={true}
         maskClosable={true}
         onClose={() => {
-          setIsVisible(!isVisible);
+          setIsVisible(false); // Close the drawer when the close button is clicked
         }}
         title="Deepesh Khatri and Associates"
-        
       >
         <div className="grid grid-rows-7 w-full h-[100%] items-start text-start text-sm">
           <div className="grid grid-rows-2">
@@ -75,7 +74,7 @@ function UserDetails() {
                   </li>
                   <li className="flex gap-2">
                     <input type="checkbox" checked />
-                    <p>EPF UAN(s) wih Compliance History</p>
+                    <p>EPF UAN(s) with Compliance History</p>
                   </li>
                   <li className="flex gap-2">
                     <input type="checkbox" checked />
@@ -117,11 +116,12 @@ function UserDetails() {
               </div>
             </div>
             <div className="pt-5 text-end text-sm">
-            <Link to="/RequestConnection" className="text-blue-500">
-              Request connection
-            </Link>
+              {/* Link to Request Connection page */}
+              <Link to="/RequestConnection" className="text-blue-500">
+                Request connection
+              </Link>
+            </div>
           </div>
-          </div>        
         </div>
       </Drawer>
     </div>
